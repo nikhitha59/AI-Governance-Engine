@@ -1,0 +1,112 @@
+NM SERVICES
+Responsible AI & Data Usage Policy
+
+Version: 1.4
+Effective Date: January 1, 2026
+Applies To: All employees, contractors, vendors, and third-party partners
+
+1. Purpose
+The purpose of this policy is to establish guidelines for the safe, ethical, and compliant use of Artificial Intelligence (AI) systems within NM Services (“the Company”).
+This policy protects customer data, company intellectual property, and regulatory compliance obligations under applicable financial and privacy laws.
+
+2. Definitions
+Confidential Data
+Any non-public business, customer, employee, or financial information.
+Sensitive Personal Information (SPI)
+
+Includes but is not limited to:
+Social Security Numbers
+Bank account numbers
+Credit card numbers
+Tax records
+Government identification numbers
+Health information
+Biometric identifiers
+
+Public AI Tools
+AI systems not hosted or controlled by NM infrastructure (e.g., external chatbots, public LLM platforms).
+
+3. Acceptable Use of AI
+Employees may use approved AI systems for:
+Drafting internal documentation
+Summarizing non-confidential reports
+Code assistance for internal tools
+Data analysis on anonymized datasets
+Customer support responses using approved templates
+All AI-generated content must be reviewed by a human before external distribution.
+
+4. Prohibited Activities
+The following actions are strictly prohibited:
+
+4.1 Sharing Sensitive Data
+Employees must NOT input any of the following into AI systems:
+Customer financial data
+Social Security Numbers
+Account credentials
+API keys or passwords
+Internal audit reports
+Non-public financial results
+Source code of proprietary systems
+
+4.2 Bypassing Security Controls
+Attempting to override, jailbreak, manipulate, or trick AI systems into revealing restricted information is considered a security violation.
+
+4.3 Automated Decision Making
+AI systems may not independently:
+Approve loans
+Deny customer accounts
+Perform compliance judgments
+Generate legal advice
+Provide investment recommendations
+A qualified employee must always review decisions.
+
+5. Data Classification Rules
+Data Type	                       AI Usage Allowed
+Public marketing material	              Yes
+Internal policies	                      Yes
+Customer support templates	              Yes
+Customer personal data	                  No
+Financial transactions	                  No
+Authentication credentials	              No
+Regulatory filings (unreleased)	          No
+
+6. Human Oversight Requirement
+All Medium-Risk AI outputs must be reviewed by the employee generating them.
+High-Risk scenarios require approval from:
+AI Governance Team OR Information Security Team
+Examples:
+Customer communication containing financial advice
+Compliance interpretation
+Regulatory responses
+
+
+7. Incident Reporting
+Employees must report AI-related incidents immediately if they observe:
+Data leakage
+Incorrect financial guidance
+Hallucinated compliance information
+Exposure of internal company systems
+
+Report via:
+security@nm.com
+
+
+8. Violations
+Violations may result in:
+Access revocation
+Disciplinary action
+Termination of employment
+Legal action where applicable
+
+
+9. Regulatory Alignment
+This policy aligns with:
+GLBA (Gramm-Leach-Bliley Act)
+SOC2 Security Controls
+Internal Data Protection Standard IDS-21
+Responsible AI Governance Framework
+
+
+10. Acknowledgement
+All employees must acknowledge this policy annually.
+Use of company AI systems constitutes acceptance of this policy.

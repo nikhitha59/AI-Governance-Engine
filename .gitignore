@@ -1,7 +1,38 @@
+# Python
 __pycache__/
 *.pyc
-.env
-.venv/
+*.pyo
+*.pyd
+
+# Virtual environment
 venv/
-chroma_db/
+.env
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Models / embeddings / vector db
+policy_db/
+*.bin
+*.pt
+*.onnx
+*.safetensors
+
+# HuggingFace cache
+.cache/
+.huggingface/
+*.lock
+
+# Ollama models (important)
+C:\Users\*\AppData\Local\Ollama\
+
+# Logs & db
+*.log
 *.sqlite3
+
+# Streamlit cache
+.streamlit/
+
+# VS Code
+.vscode/
