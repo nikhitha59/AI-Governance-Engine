@@ -32,7 +32,7 @@ Rules:
 
     try:
         response = ollama.chat(
-            model="llama3",
+            model="phi3:mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_message},
