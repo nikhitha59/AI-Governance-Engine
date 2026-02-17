@@ -36,3 +36,6 @@ C:\Users\*\AppData\Local\Ollama\
 
 # VS Code
 .vscode/
+
+
+chat_logs.db
