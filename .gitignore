@@ -30,12 +30,10 @@ C:\Users\*\AppData\Local\Ollama\
 # Logs & db
 *.log
 *.sqlite3
+*.db
 
 # Streamlit cache
 .streamlit/
 
 # VS Code
 .vscode/
-
-
-chat_logs.db

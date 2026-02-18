@@ -12,7 +12,7 @@ from evaluation.judge import evaluate_answer
 app = FastAPI()
 
 
-@app.get("/")
+@app .get("/")
 def root():
     return {"status": "AI Governance Engine Running (Local Model)"}
 
