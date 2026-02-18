@@ -46,7 +46,7 @@ def chat(request: ChatRequest):
         final_reply = ai_reply or "No response generated."
 
     
-    #Evaluation level
+    #Evaluation level of assistant
     evaluation = evaluate_answer(safe_message, final_reply, context)
     print("SAFETY SCORE:", evaluation)
 
