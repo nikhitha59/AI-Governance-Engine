@@ -20,38 +20,36 @@ def root():
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
 
-    # Step 1 — Security inspection
+    # Step 1 — Security filter
     security_result = inspect_input(request.message)
     safe_message = security_result["cleaned_text"]
 
-    # Step 2 — Retrieve policy (RAG)
+    # Step 2 — Retrieve policy
     context = retrieve_policy_context(safe_message)
 
-    # Step 3 — Executor AI
+    # Step 3 — Generate answer
     ai_reply = generate_response(safe_message, context)
 
-    # Step 4 — Auditor
-    verdict = audit_response(safe_message, ai_reply)
+    # Step 4 — Audit response
+    audit = audit_response(safe_message, ai_reply, context)
 
-    # Step 5 — Risk evaluation
-    risk = evaluate_risk(verdict)
+    # Step 5 — Risk decision
+    risk = evaluate_risk(audit)
 
     if risk["action"] == "BLOCK":
-        final_reply = "Blocked by compliance policy. (HIGH RISK)"
+        final_reply = "Blocked by compliance policy (HIGH RISK)."
 
-    elif risk["action"] == "ESCALATE":
-        final_reply = f"⚠️ Potential policy concern detected.\n\n{ai_reply}"
+    elif risk["action"] == "ALLOW_WITH_WARNING":
+        final_reply = (
+            ai_reply +
+            "\n\n⚠️ Note: This answer is inferred from policy context but not explicitly stated."
+        )
 
     else:
-        final_reply = ai_reply or "No response generated."
+        final_reply = ai_reply
 
-    
-    #Evaluation level of assistant
-    evaluation = evaluate_answer(safe_message, final_reply, context)
-    print("SAFETY SCORE:", evaluation)
+    print("SAFETY:", risk["level"], "-", audit["reason"])
 
-
-    # Step 6 — Logging
     log_interaction(request.message, final_reply)
 
     return ChatResponse(reply=final_reply)

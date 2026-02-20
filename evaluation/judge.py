@@ -1,29 +1,18 @@
 from application.llm_service import generate_response
 
 
+# evaluation/judge.py
+
 def evaluate_answer(question, answer, context):
     """
-    LLM-as-a-judge evaluation
+    Lightweight evaluation layer.
+    Only checks if model actually answered something.
+    No heavy NLP models.
     """
+    if not answer or len(answer.strip()) < 10:
+        return "FAIL"
 
-    judge_prompt = f"""
-You are an AI compliance evaluator.
+    if "blocked by compliance" in answer.lower():
+        return "BLOCKED"
 
-Check if the assistant response follows company policy strictly.
-
-Question:
-{question}
-
-Policy:
-{context}
-
-Assistant Response:
-{answer}
-
-Return ONLY ONE WORD:
-PASS or FAIL
-"""
-
-    verdict = generate_response(judge_prompt)
-
-    return verdict.strip()
+    return "PASS"

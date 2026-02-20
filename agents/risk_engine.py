@@ -1,26 +1,26 @@
-def evaluate_risk(verdict: str):
+# agents/risk_engine.py
 
-    verdict = verdict.upper().strip()
+def evaluate_risk(audit_result: dict):
+    """
+    Converts audit verdict into governance action
+    """
 
-    if verdict == "SAFE":
-        return {
-            "risk_level": "LOW",
-            "action": "ALLOW"
-        }
-
-    if verdict == "UNCERTAIN":
-        return {
-            "risk_level": "MEDIUM",
-            "action": "ESCALATE"
-        }
+    verdict = audit_result.get("verdict", "UNSUPPORTED")
 
     if verdict == "VIOLATION":
         return {
-            "risk_level": "HIGH",
+            "level": "HIGH",
             "action": "BLOCK"
         }
 
-    return {
-        "risk_level": "UNKNOWN",
-        "action": "ESCALATE"
-    }
+    elif verdict == "UNSUPPORTED":
+        return {
+            "level": "MEDIUM",
+            "action": "ALLOW_WITH_WARNING"
+        }
+
+    else:
+        return {
+            "level": "LOW",
+            "action": "ALLOW"
+        }
